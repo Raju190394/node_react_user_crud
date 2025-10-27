@@ -53,7 +53,7 @@ export default function StaffForm() {
         await createStaff(fd);
         alert('Staff created');
       }
-      navigate('/');
+      navigate('/staff/');
     } catch (err) {
       console.error(err);
       alert(err.response?.data?.message || 'Operation failed');

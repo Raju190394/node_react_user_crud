@@ -53,7 +53,7 @@ export default function UserForm() {
         await createUser(fd);
         alert('User created');
       }
-      navigate('/');
+      navigate('/users/');
     } catch (err) {
       console.error(err);
       alert(err.response?.data?.message || 'Operation failed');
