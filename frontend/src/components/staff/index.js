@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { fetchUsers, deleteUser } from '../../services/userService';
+import { fetchStaffs, deleteStaff } from '../../services/staffService';
 import { Link } from 'react-router-dom';
 
 export default function StaffList() {
-  const [users, setUsers] = useState([]);
+  const [users, setStaff] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const load = async () => {
     try {
-      const res = await fetchUsers();
-      setUsers(res.data);
+      const res = await fetchStaffs();
+      setStaff(res.data);
     } catch (err) {
       console.error(err);
       alert('Failed to load users');
@@ -21,8 +21,8 @@ export default function StaffList() {
   const handleDelete = async (id) => {
     if (!window.confirm('Delete user?')) return;
     try {
-      await deleteUser(id);
-      setUsers(users.filter(u => u.id !== id));
+      await deleteStaff(id);
+      setStaff(users.filter(u => u.id !== id));
     } catch (err) {
       console.error(err);
       alert('Delete failed');
@@ -34,7 +34,7 @@ export default function StaffList() {
   return (
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-3">
-        <h3>Users</h3>
+        <h3>Staffs</h3>
         <Link to="/staff/create" className="btn btn-primary">Add Staff</Link>
       </div>
       <table className="table table-bordered table-striped">

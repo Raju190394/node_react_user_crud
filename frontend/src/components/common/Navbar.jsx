@@ -17,9 +17,7 @@ function Navbar() {
         <h2 className="app-title">MyApp Dashboard</h2>
       </div>
       <div className="navbar-right">
-        <Link to="/">Home</Link>
-        <Link to="/users">Users</Link>
-        <Link to="/settings">Settings</Link>
+        <Link to="/">Profile</Link>
         <button className="logout-btn" onClick={handleLogout}>
           Logout
         </button>

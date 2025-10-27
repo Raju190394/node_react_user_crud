@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const sequelize = require('./config/db');
 const userRoutes = require('./routes/user.routes');
+const staffRoutes = require('./routes/staff.routes');
 const path = require('path');
 require('dotenv').config();
 
@@ -20,6 +21,7 @@ app.use('/uploads', express.static(path.join(__dirname, '..', UPLOAD_DIR)));
 
 // API routes
 app.use('/api/users', userRoutes);
+app.use('/api/staffs', staffRoutes);
 
 // test
 app.get('/', (req, res) => res.send('User CRUD API is running'));
