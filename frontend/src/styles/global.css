@@ -1,0 +1,14 @@
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+main {
+  min-height: calc(100vh - 120px); /* footer + navbar ke liye space */
+  padding: 20px;
+}

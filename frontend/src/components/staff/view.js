@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { fetchUser } from '../services/userService';
+import { fetchUser } from '../../services/userService';
 import { useParams, Link } from 'react-router-dom';
 
 export default function UserView() {

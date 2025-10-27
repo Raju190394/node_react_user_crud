@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { createUser, fetchUser, updateUser } from '../services/userService';
+import { createUser, fetchUser, updateUser } from '../../services/userService';
 import { useNavigate, useParams } from 'react-router-dom';
 
 const empty = { first_name:'', last_name:'', email:'', mobile_no:'', gender:'Male', role:'User', photo:null };
