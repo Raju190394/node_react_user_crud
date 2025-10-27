@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchUser } from '../../services/userService';
 import { useParams, Link } from 'react-router-dom';
 
-export default function UserView() {
+export default function view() {
   const [user, setUser] = useState(null);
   const { id } = useParams();
   useEffect(() => {
@@ -12,7 +12,7 @@ export default function UserView() {
         setUser(res.data);
       } catch (err) {
         console.error(err);
-        alert('Failed to load user');
+        alert('Failed to load data');
       }
     })();
   }, [id]);

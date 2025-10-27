@@ -8,11 +8,12 @@ function Sidebar() {
     <aside className="sidebar">
       <nav>
         <NavLink to="/" end>
-          📊 Dashboard
+        Dashboard
         </NavLink>
-        <NavLink to="/users">👥 Users</NavLink>
-        <NavLink to="/reports">📑 Reports</NavLink>
-        <NavLink to="/settings">⚙️ Settings</NavLink>
+        <NavLink to="/users">Users</NavLink>
+        <NavLink to="/staff"> Staffs</NavLink>
+        <NavLink to="/reports">Reports</NavLink>
+        <NavLink to="/settings">Settings</NavLink>
       </nav>
     </aside>
   );

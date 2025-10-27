@@ -6,6 +6,8 @@ import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
 import UserList from "../components/user/UserList";
 import UserForm from "../components/user/UserForm";
+import StaffList from "../components/staff/index";
+import StaffCreate from "../components/staff/create";
 
 function AppRoutes() {
   return (
@@ -20,6 +22,10 @@ function AppRoutes() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/users" element={<UserList />} />
         <Route path="/users/create" element={<UserForm />} />
+      </Route>
+      <Route element={<MainLayout />}>
+        <Route path="/staff" element={<StaffList />} />
+        <Route path="/staff/create" element={<StaffCreate />} />
       </Route>
 
       {/* Fallback */}

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchUsers, deleteUser } from '../../services/userService';
 import { Link } from 'react-router-dom';
 
-export default function UserList() {
+export default function StaffList() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -35,7 +35,7 @@ export default function UserList() {
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h3>Users</h3>
-        <Link to="/create" className="btn btn-primary">Add User</Link>
+        <Link to="/staff/create" className="btn btn-primary">Add Staff</Link>
       </div>
       <table className="table table-bordered table-striped">
         <thead><tr>
