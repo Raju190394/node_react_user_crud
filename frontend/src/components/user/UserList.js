@@ -35,7 +35,7 @@ export default function UserList() {
     <div className="container mt-4">
       <div className="d-flex justify-content-between align-items-center mb-3">
         <h3>Users</h3>
-        <Link to="/create" className="btn btn-primary">Add User</Link>
+        <Link to="/users/create" className="btn btn-primary">Add User</Link>
       </div>
       <table className="table table-bordered table-striped">
         <thead><tr>

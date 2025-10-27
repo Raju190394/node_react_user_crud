@@ -5,6 +5,7 @@ import Dashboard from "../pages/Dashboard";
 import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
 import UserList from "../components/user/UserList";
+import UserForm from "../components/user/UserForm";
 
 function AppRoutes() {
   return (
@@ -18,6 +19,7 @@ function AppRoutes() {
       <Route element={<MainLayout />}>
         <Route path="/" element={<Dashboard />} />
         <Route path="/users" element={<UserList />} />
+        <Route path="/users/create" element={<UserForm />} />
       </Route>
 
       {/* Fallback */}
