@@ -1,4 +1,4 @@
-import Navbar from "../components/common/Navbar";
+import Header from "../components/common/Header";
 import Footer from "../components/common/Footer";
 import Sidebar from "../components/common/Sidebar";
 import { Outlet } from "react-router-dom";
@@ -7,8 +7,8 @@ import "../styles/MainLayout.css";
 function MainLayout() {
   return (
     <div className="layout">
-      {/* Top Navbar */}
-      <Navbar />
+      {/* Top Header */}
+      < Header />
 
       <div className="main-wrapper d-flex">
         {/* Sidebar */}

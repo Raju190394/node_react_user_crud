@@ -6,8 +6,11 @@ import Login from "../pages/Login";
 import NotFound from "../pages/NotFound";
 import UserList from "../components/user/UserList";
 import UserForm from "../components/user/UserForm";
-import StaffList from "../components/staff/index";
-import StaffCreate from "../components/staff/create";
+import UserView from "../components/user/UserView";
+import StaffList from "../components/staff/Index";
+import StaffCreate from "../components/staff/Create";
+import StaffView from "../components/staff/View";
+
 
 function AppRoutes() {
   return (
@@ -22,10 +25,14 @@ function AppRoutes() {
         <Route path="/" element={<Dashboard />} />
         <Route path="/users" element={<UserList />} />
         <Route path="/users/create" element={<UserForm />} />
+        <Route path="/users/edit/:id" element={<UserForm />} />
+        <Route path="/users/view/:id" element={<UserView />} />
       </Route>
       <Route element={<MainLayout />}>
-        <Route path="/staff" element={<StaffList />} />
-        <Route path="/staff/create" element={<StaffCreate />} />
+        <Route path="/staffs" element={<StaffList />} />
+        <Route path="/staffs/create" element={<StaffCreate />} />
+        <Route path="/staffs/view/:id" element={<StaffView />} />
+        <Route path="/staffs/edit/:id" element={<StaffCreate />} />
       </Route>
 
       {/* Fallback */}

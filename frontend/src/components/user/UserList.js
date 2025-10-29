@@ -55,8 +55,8 @@ export default function UserList() {
               <td>{u.gender}</td>
               <td>{u.role}</td>
               <td>
-                <Link to={`users/view/${u.id}`} className="btn btn-sm btn-info me-1">View</Link>
-                <Link to={`users/edit/${u.id}`} className="btn btn-sm btn-warning me-1">Edit</Link>
+                <Link to={`/users/view/${u.id}`} className="btn btn-sm btn-info me-1">View</Link>
+                <Link to={`/users/edit/${u.id}`} className="btn btn-sm btn-warning me-1">Edit</Link>
                 <button onClick={()=>handleDelete(u.id)} className="btn btn-sm btn-danger">Delete</button>
               </td>
             </tr>

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchStaff } from '../../services/staffService';
 import { useParams, Link } from 'react-router-dom';
 
-export default function view() {
+export default function StaffView() {
   const [staff, setStaff] = useState(null);
   const { id } = useParams();
   useEffect(() => {
@@ -33,8 +33,8 @@ export default function view() {
             <p><strong>Mobile:</strong> {staff.mobile_no}</p>
             <p><strong>Gender:</strong> {staff.gender}</p>
             <p><strong>Role:</strong> {staff.role}</p>
-            <Link to={`/edit/${staff.id}`} className="btn btn-sm btn-warning me-2">Edit</Link>
-            <Link to="/" className="btn btn-sm btn-secondary">Back</Link>
+            <Link to={`/staffs/edit/${staff.id}`} className="btn btn-sm btn-warning me-2">Edit</Link>
+            <Link to="/staffs/" className="btn btn-sm btn-secondary me-2">Back</Link>
           </div>
         </div>
       </div>

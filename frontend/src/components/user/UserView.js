@@ -33,8 +33,8 @@ export default function UserView() {
             <p><strong>Mobile:</strong> {user.mobile_no}</p>
             <p><strong>Gender:</strong> {user.gender}</p>
             <p><strong>Role:</strong> {user.role}</p>
-            <Link to={`users/edit/${user.id}`} className="btn btn-sm btn-warning me-2">Edit</Link>
-            <Link to="/" className="btn btn-sm btn-secondary">Back</Link>
+            <Link to={`/users/edit/${user.id}`} className="btn btn-sm btn-warning me-2">Edit</Link>
+            <Link to="/users/" className="btn btn-sm btn-secondary">Back</Link>
           </div>
         </div>
       </div>

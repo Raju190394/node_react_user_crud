@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { createStaff, fetchStaff, updateStaff } from '../../services/staffService';
-import { useNavigate, useParams } from 'react-router-dom';
-
+import { useNavigate, useParams, Link } from 'react-router-dom';
 const empty = { first_name:'', last_name:'', email:'', mobile_no:'', gender:'Male', role:'Staff', photo:null };
 
 export default function StaffForm() {
@@ -104,6 +103,7 @@ export default function StaffForm() {
         </div>
 
         <button className="btn btn-primary">{isEdit ? 'Update' : 'Create'}</button>
+        <Link to="/staffs/" className="btn btn-secondary m-1">Back</Link>
       </form>
     </div>
   );
