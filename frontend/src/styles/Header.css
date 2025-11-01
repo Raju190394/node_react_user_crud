@@ -1,38 +1,28 @@
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: #2563eb;
+.app-header {
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
   color: white;
-  padding: 10px 20px;
-  height: 60px;
+  border-bottom: 3px solid #1e40af;
+  border-radius: 0 0 12px 12px;
 }
 
-.header-left h2 {
-  font-size: 20px;
+.app-title {
+  font-size: 1.5rem;
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-.header-right a {
-  color: white;
-  margin: 0 10px;
-  text-decoration: none;
-  font-weight: 500;
-}
-
-.header-right a:hover {
+.profile-link:hover {
   text-decoration: underline;
+  color: #dbeafe !important;
 }
 
 .logout-btn {
-  background: #ef4444;
-  color: white;
   border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
-  cursor: pointer;
+  transition: all 0.2s ease;
 }
 
 .logout-btn:hover {
-  background: #dc2626;
+  background-color: #e0e7ff;
+  color: #1e3a8a;
+  transform: scale(1.05);
 }
