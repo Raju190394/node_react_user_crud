@@ -11,6 +11,10 @@ import StaffList from "../components/staff/Index";
 import StaffCreate from "../components/staff/Create";
 import StaffView from "../components/staff/View";
 
+import Reports from "../components/reports/Index";
+import Settings from "../components/settings/Index";
+// import reports from "../components/reports/Create";
+// import reports from "../components/reports/View";
 
 function AppRoutes() {
   return (
@@ -34,7 +38,12 @@ function AppRoutes() {
         <Route path="/staffs/view/:id" element={<StaffView />} />
         <Route path="/staffs/edit/:id" element={<StaffCreate />} />
       </Route>
-
+      <Route element={<MainLayout />}>
+        <Route path="/reports" element={<Reports />} />
+      </Route>
+      <Route element={<MainLayout />}>
+        <Route path="/settings" element={<Settings />} />
+      </Route>
       {/* Fallback */}
       <Route path="*" element={<NotFound />} />
     </Routes>

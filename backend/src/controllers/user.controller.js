@@ -1,5 +1,7 @@
 const User = require('../models/user.model');
 const { validationResult } = require('express-validator');
+const { QueryTypes } = require('sequelize');
+const sequelize = require('../config/db');
 const fs = require('fs');
 const path = require('path');
 require('dotenv').config();
@@ -30,8 +32,13 @@ exports.createUser = async (req, res) => {
 // Get all users
 exports.getUsers = async (req, res) => {
   try {
+    const roles = await sequelize.query(
+      'SELECT role, role_code FROM roles ORDER BY id ASC',
+      { type: QueryTypes.SELECT }
+    );
     const users = await User.findAll({ order: [['createdAt', 'DESC']] });
-    return res.json(users);
+    const data = { users , roles};
+    return res.json(data);
   } catch (err) {
     console.error(err);
     return res.status(500).json({ message: 'Server error' });

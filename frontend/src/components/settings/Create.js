@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { createUser, fetchUser, updateUser } from '../../services/userService';
+import { createStaff, fetchStaff, updateStaff } from '../../services/staffService';
 import { useNavigate, useParams, Link } from 'react-router-dom';
+const empty = { first_name:'', last_name:'', email:'', mobile_no:'', gender:'Male', role:'Staff', photo:null };
 
-const empty = { first_name:'', last_name:'', email:'', mobile_no:'', gender:'Male', role:'User', photo:null };
-
-export default function UserForm() {
+export default function StaffForm() {
   const [form, setForm] = useState(empty);
   const [preview, setPreview] = useState(null);
   const [isEdit, setIsEdit] = useState(false);
@@ -15,7 +14,7 @@ export default function UserForm() {
     if (params.id) { // edit
       setIsEdit(true);
       (async () => {
-        const res = await fetchUser(params.id);
+        const res = await fetchStaff(params.id);
         setForm({ ...res.data, photo: null }); // don't set photo file
         if (res.data.photo) setPreview(`${process.env.REACT_APP_API_URL.replace('/api','')}/uploads/${res.data.photo}`);
       })();
@@ -47,13 +46,13 @@ export default function UserForm() {
 
     try {
       if (isEdit) {
-        await updateUser(params.id, fd);
-        alert('User updated');
+        await updateStaff(params.id, fd);
+        alert('Staff updated');
       } else {
-        await createUser(fd);
-        alert('User created');
+        await createStaff(fd);
+        alert('Staff created');
       }
-      navigate('/users/');
+      navigate('/staff/');
     } catch (err) {
       console.error(err);
       alert(err.response?.data?.message || 'Operation failed');
@@ -62,7 +61,7 @@ export default function UserForm() {
 
   return (
     <div className="container mt-4">
-      <h3>{isEdit ? 'Edit User' : 'Add User'}</h3>
+      <h3>{isEdit ? 'Edit Staff' : 'Add Staff'}</h3>
       <form onSubmit={handleSubmit}>
         <div className="row">
           <div className="mb-3 col-md-6">
@@ -93,11 +92,7 @@ export default function UserForm() {
           </div>
           <div className="mb-3 col-md-4">
             <label>Role</label>
-            <select name="gender" value={form.gender} onChange={handleChange} className="form-control">
-              <option>Male</option>
-              <option>Female</option>
-              <option>Other</option>
-            </select>
+            <input name="role" value={form.role} onChange={handleChange} className="form-control" />
           </div>
 
           <div className="mb-3 col-md-4">
@@ -108,7 +103,7 @@ export default function UserForm() {
         </div>
 
         <button className="btn btn-primary">{isEdit ? 'Update' : 'Create'}</button>
-        <Link to="/users/" className="btn btn-secondary m-1">Back</Link>
+        <Link to="/staffs/" className="btn btn-secondary m-1">Back</Link>
       </form>
     </div>
   );

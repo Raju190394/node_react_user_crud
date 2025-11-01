@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { fetchStaffs, deleteStaff } from '../../services/staffService';
 import { Link } from 'react-router-dom';
 
+
 export default function StaffList() {
   const [users, setStaff] = useState([]);
   const [loading, setLoading] = useState(true);
